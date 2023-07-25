@@ -6,10 +6,12 @@ import { sendData } from './data-api.js';
 
 const TAGSCOUNT = 5;
 const MAX_HASHTAG_LENGTH = 19;
-
-const imgUploadInputField = document.querySelector('.img-upload__input'); //поле загрузки нового фото
-const imgUploadForm = document.querySelector('.img-upload__overlay');//<!-- Форма редактирования изображения -->
-const uploadForm = document.querySelector('.img-upload__form');//Форма отправки данных
+//поле загрузки нового фото
+const imgUploadInputField = document.querySelector('.img-upload__input');
+//<!-- Форма редактирования изображения -->
+const imgUploadForm = document.querySelector('.img-upload__overlay');
+//Форма отправки данных
+const uploadForm = document.querySelector('.img-upload__form');
 const closeimgButton = document.querySelector('.img-upload__cancel');
 const commentsField = uploadForm.querySelector('.text__description');
 const hashtagsField = uploadForm.querySelector('.text__hashtags');
