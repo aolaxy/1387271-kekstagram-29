@@ -105,7 +105,6 @@ const openNewPhoto = ()=>{
   setEffectsSlider();
   setOnFormSubmit(async (data) => {
     try {
-      //installForm();
       await sendData(data);
       hideNewPhoto();
       showSuccessMessage();

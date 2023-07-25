@@ -1,5 +1,4 @@
 //модуль по добавлению эфектов для нового фото
-//перечислния с эффектами
 const EFFECTS = [
   {
     name : 'none',
@@ -50,8 +49,8 @@ const EFFECTS = [
     unit : '',
   }
 ];
-//задаём изначальное состояние картинке(выбранный эффект)
-const START_EFFECT = EFFECTS[0];
+
+const START_EFFECT = EFFECTS[0];//задаём изначальное состояние картинке(выбранный эффект)
 let chosenEffect = START_EFFECT;
 
 const imgElement = document.querySelector('.img-upload__preview img');//элемент с фото
@@ -63,8 +62,8 @@ const effectLevelElement = document.querySelector('.effect-level__value');//зн
 const renderSlider = () => sliderContainerElement.classList.remove('hidden');// отобразить слайдер
 const hideSlider = () => sliderContainerElement.classList.add('hidden');// спрятать
 const isStartValue = () => chosenEffect === START_EFFECT;// проверка на отстутствие эффектов
-//присвоение значений полей слайдера
-const updateSlider = () => {
+
+const updateSlider = () => {//присвоение значений полей слайдера
   sliderElement.noUiSlider.updateOptions({
     range: {
       min: chosenEffect.min,
@@ -73,15 +72,14 @@ const updateSlider = () => {
     step: chosenEffect.step,
     start: chosenEffect.max,
   });
-  //если выбран 1 эффект значит скрыть слайдер
   if (isStartValue()){
-    hideSlider();
+    hideSlider();//если выбран 1 эффект значит скрыть слайдер
   } else {
     renderSlider(); //иначе показать
   }
 };
-//смена эффекта
-const onEffectsChange = (evt) => {
+
+const onEffectsChange = (evt) => {//смена эффекта
   if(!evt.target.classList.contains('effects__radio')) {
     return;
   }
@@ -90,8 +88,8 @@ const onEffectsChange = (evt) => {
   imgElement.className = `effects__preview--${chosenEffect.name}`;
   updateSlider();
 };
-//инициализация слайдера для эффектов
-const initSlider = () => {
+
+const initSlider = () => {//инициализация слайдера для эффектов
   noUiSlider.create(sliderElement, {
     range: {
       min: START_EFFECT.min,
@@ -102,29 +100,29 @@ const initSlider = () => {
     connect: 'lower',
   });
 };
-//обновление значений слайдера
-const onSliderUpdate = () => {
+
+const onSliderUpdate = () => {//обновление значений слайдера
   const sliderValue = sliderElement.noUiSlider.get();
   imgElement.style.filter = isStartValue()
     ? START_EFFECT.style
     : `${chosenEffect.style}(${sliderValue}${chosenEffect.unit})`;//присвоение значений
   effectLevelElement.value = sliderValue;
 };
-//сброс эффектов
-const resetEffects = () => {
+
+const resetEffects = () => {//сброс эффектов
   chosenEffect = START_EFFECT;
   updateSlider();
 };
-//установка эффектов
-const setEffectsSlider = () => {
+
+const setEffectsSlider = () => {//установка эффектов
   initSlider();
   hideSlider();
   effectElements.addEventListener('change', onEffectsChange);
   sliderElement.noUiSlider.on('update', onSliderUpdate);
 
 };
-//уничтожение слайдера
-const destroySlider = ()=>{
+
+const destroySlider = ()=>{//уничтожение слайдера
   sliderElement.noUiSlider.destroy();
   effectElements.removeEventListener('change', onEffectsChange);
 };
