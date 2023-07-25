@@ -60,6 +60,4 @@ const showErrorMessage = ()=>{
   document.body.addEventListener('click',onErrorDocumentClick);
 
 };
-
 export{showSuccessMessage,showErrorMessage};
-
