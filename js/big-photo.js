@@ -74,7 +74,7 @@ const renderBigPhoto = (item) => {
   bigPhoto.querySelector('.social__caption').textContent = item.description;
   const onCommentsLoaderClick = renderComments(item.comments);
   //заполнение комментариев
-  commContainer.comments = onCommentsLoaderClick(item.comments);//renderComments(item.comments);
+  commContainer.comments = onCommentsLoaderClick(item.comments);
   commentsLoadButton.addEventListener('click',onCommentsLoaderClick);
 };
 
