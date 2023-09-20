@@ -1,9 +1,5 @@
 //модуль по созданию галлереи фото
 import{renderBigPhoto,openModal} from './big-photo.js';
-//import { installForm } from './form-newphoto.js';
-//import { showFilters } from './filters.js';
-//import { setPreviewPictureLoader } from './upload-newphoto.js';
-
 //доступ к контейнеру куда вставлять список фото
 const picContainer = document.querySelector('.pictures');
 //доступ к шаблону мини-фотографий
@@ -30,6 +26,5 @@ const renderPosts = (pictures) =>{
   });
   // добавляем в dom список из фрагмента
   picContainer.appendChild(listFragment);
-  //вызовы функций по установке параметров формы загрузки окна
 };
 export {renderPosts};

@@ -90,7 +90,7 @@ const onEffectsChange = (evt) => {
   imgElement.className = `effects__preview--${chosenEffect.name}`;
   updateSlider();
 };
-//инициализация слайдера
+//инициализация слайдера для эффектов
 const initSlider = () => {
   noUiSlider.create(sliderElement, {
     range: {

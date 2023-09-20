@@ -1,7 +1,7 @@
 //модуль по работе с сообщениями при отправке формы
 const successTemplate = document.querySelector('#success').content.querySelector('.success');
 const errorTemplate = document.querySelector('#error').content.querySelector('.error');
-
+//функция вызова события по нажатию кнопки ESC
 function onDocumentKeydown(evt,cb){
   if (evt.key === 'Escape') {
     evt.preventDefault();
@@ -32,7 +32,6 @@ const showSuccessMessage = ()=>{
   document.body.addEventListener('click',onSuccessDocumentClick);
   document.body.addEventListener('keydown',onCloseSuccessMessage);
 };
-
 //реализация окна с показом ошибки
 //закрытие окна по щелчку вне области сообщения
 const onErrorDocumentClick = (evt)=>{

@@ -1,5 +1,4 @@
 const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
-
 const fileChooser = document.querySelector('.img-upload__input[type=file]');
 const previewBigImg = document.querySelector('.img-upload__preview img');
 const form = document.querySelector('.img-upload__form');

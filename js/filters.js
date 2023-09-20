@@ -1,8 +1,6 @@
 import { renderPosts } from './render-posts.js';
 import { debounce } from './util.js';
-
 const PICTURES_COUNT = 10;
-
 const TIMEOUT = 500;
 const filterForm = document.querySelector('.img-filters__form');
 const imgFilters = document.querySelector('.img-filters');
